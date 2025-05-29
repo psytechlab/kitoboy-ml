@@ -1,0 +1,12 @@
+dataset_id: "f96f50f57a0745b2a1d93f5f745babed"
+download_from_clearml: False
+base_path: "/home/ibuyanov/kitoboy-ml/data/test_dataset"
+
+label2id : "group_map.json"
+text_col: "text"
+label_col: "group"
+train_file: "train.csv"
+test_file: "test.csv"
+eval_file: null
+use_test_as_eval: False
+sep: "|"

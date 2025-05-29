@@ -1,0 +1,12 @@
+dataset_id: "1ef08f08116a48c8961db14804c4c3eb" # presui-group-28-mapping_prior_label_multi_antisui_feelings-stage_2-v_4_0
+download_from_clearml: True
+base_path: ""
+
+label2id : "label2id.json"
+text_col: "text"
+label_col: "label"
+train_file: "train.csv"
+test_file: "test.csv"
+eval_file: "val.csv"
+use_test_as_eval: False
+sep: "|"

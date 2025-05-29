@@ -1,0 +1,15 @@
+dataset_id: ""
+download_from_clearml: False
+base_path: "/workspace/test_datasets_v2/dataset_v1"
+
+label2id : "exact_label_v1_map.json"
+text_col: "uncased_text"
+label_col: "exact_label_v1"
+# label2id : "binary_label_map.json"
+# text_col: "uncased_text"
+# label_col: "binary_label"
+train_file: "train.csv"
+test_file: "test.csv"
+eval_file: "val.csv"
+use_test_as_eval: False
+sep: "|"

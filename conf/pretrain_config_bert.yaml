@@ -1,0 +1,14 @@
+defaults:
+    - dataset: pretrain
+    - model: bert
+    - clearml: clearml
+
+log_into_clearml: True
+seed: 21
+output_dir: 'model/'
+logging_dir: './logs'
+truncation: True
+padding: True
+block_size: 128
+data_col_name: "text"
+num_proc: 16

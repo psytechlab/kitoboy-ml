@@ -1,0 +1,9 @@
+model_path: deepvk/deberta-v1-base #DeepPavlov/distilrubert-base-cased-conversational
+freeze_encoder: False
+epoch: 7
+batch_size_train: 32
+gradient_accumulation_steps: 4
+batch_size_eval: 32
+weight_decay: 0.01
+learning_rate: 2e-4
+mlm_probability: 0.15

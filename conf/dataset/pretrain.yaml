@@ -1,0 +1,4 @@
+dataset_id: "dc528e932c674d7fb217fb186c8a50ac"
+download_from_clearml: True
+base_path: "/home/ibuyanov/kitoboy-ml/data/test_dataset"
+data_file: "data.txt"

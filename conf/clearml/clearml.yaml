@@ -1,0 +1,5 @@
+project: "kitoboy"
+task_name: "bert_training-${experiment_name}"
+task_type: "training"
+output_uri: ""
+model_upload_dest: "${clearml.output_uri}/models"

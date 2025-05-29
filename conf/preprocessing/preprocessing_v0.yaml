@@ -1,0 +1,10 @@
+primitives:
+    - lower_string
+    - remove_punct 
+    - remove_latin 
+    - swap_enter_to_space
+    - collapse_spaces
+    - strip_string
+    
+custom:
+    - replace_ru_e

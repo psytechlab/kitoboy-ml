@@ -1,0 +1,34 @@
+model_path: DeepPavlov/rubert-base-cased # google-bert/bert-base-multilingual-cased #DeepPavlov/distilrubert-base-cased-conversational
+freeze_encoder: False
+epoch: 7 # Кол-во эпох для обучения
+batch_size_train: 8 # Размер пакета для каждого устройства во время обучения
+batch_size_eval: 8 # Размер пакета для каждого устройства во время валидации
+weight_decay: 0.01 # Понижение весов
+learning_rate: 3e-5 # Скорость обучения
+save_total_limit: 5  
+
+
+
+
+
+
+# model_path: DeepPavlov/rubert-base-cased  # google-bert/bert-base-multilingual-cased #DeepPavlov/distilrubert-base-cased-conversational
+# freeze_encoder: False
+# epoch: 1 # Кол-во эпох для обучения
+# batch_size_train: 8 # Размер пакета для каждого устройства во время обучения
+# batch_size_eval: 8 # Размер пакета для каждого устройства во время валидации
+# weight_decay: 0.01 # Понижение весов
+# learning_rate: 3e-5 # Скорость обучения
+
+
+#save_total_limit: 5  # Only last 5 models are saved. Older ones are deleted.
+# weight_decay: 0.01
+# evaluation_strategy: "epoch"
+# save_strategy: "epoch"
+# metric_for_best_model: "eval_f1"
+# load_best_model_at_end: True
+# push_to_hub: False
+# no_cuda: False # False - cuda, True - no cuda. Always use cuda if available
+# callbacks:
+#     early_stopping_patience: 5
+#     early_stopping_threshold: 0.1

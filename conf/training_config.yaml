@@ -1,0 +1,22 @@
+defaults:
+    - dataset: base-stage2
+    - preprocessing: preprocessing_v0
+    - model: bert-stage0
+    - clearml: clearml
+
+log_into_clearml: True
+seed: 21
+
+experiment_name: 'antisui-label_exact_10-mapping_prior_label_v0' # 'presui-group-28-mapping_prior_label_multi_antisui_feelings-stage_2-v_4_0'
+output_dir: '/workspace/model_outputs_test/${experiment_name}' # Выходной каталог
+
+
+save_total_limit: null
+remove_checkpoints: True
+logging_dir: './logs' # Каталог для хранения журналов
+truncation: True
+padding: True
+max_length: 512
+test_run: False
+metric_for_best_model: "eval_f1_macro" # the metric name must start with 'eval_' prefix
+
