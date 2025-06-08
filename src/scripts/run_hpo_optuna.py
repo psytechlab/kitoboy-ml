@@ -57,7 +57,7 @@ def main(cfg: OmegaConf):
             per_device_eval_batch_size=cfg.model.batch_size_eval,
             weight_decay=trial.suggest_float('weight_decay', WD_MIN, WD_CEIL),  
             learning_rate=trial.suggest_float('learning_rate', low=LR_MIN, high=LR_CEIL),
-            max_grad_norm=1,#trial.suggest_categorical('max_grad_norm', MAX_GRAD_NORM),
+            max_grad_norm=trial.suggest_categorical('max_grad_norm', MAX_GRAD_NORM),
             warmup_ratio=trial.suggest_float('warmup_ratio', low=WARMUP_MIN, high=WARMUP_CEIL),
             lr_scheduler_type=trial.suggest_categorical("lr_scheduler", LRS),
             label_smoothing_factor=trial.suggest_float('label_smoothing_factor', low=LABEL_SMOOTHING_MIN, high=LABEL_SMOOTHING_CEIL),
@@ -81,16 +81,16 @@ def main(cfg: OmegaConf):
         return metrics['eval_f1_macro']
 
         
-    #LR_MIN = 1e-5
-    #LR_CEIL = 1e-4
-    #WD_MIN = 0.001
-    #WD_CEIL = 0.02
-    #MAX_GRAD_NORM = [1,3,5]
-    #LRS = ["linear","cosine", "polynomial"]
-    #WARMUP_MIN = 0.0
-    #WARMUP_CEIL = 0.1
-    #LABEL_SMOOTHING_MIN = 0.0
-    #LABEL_SMOOTHING_CEIL = 1.0
+    LR_MIN = 1e-5
+    LR_CEIL = 1e-4
+    WD_MIN = 0.001
+    WD_CEIL = 0.02
+    MAX_GRAD_NORM = [1,3,5]
+    LRS = ["linear","cosine", "polynomial"]
+    WARMUP_MIN = 0.0
+    WARMUP_CEIL = 0.1
+    LABEL_SMOOTHING_MIN = 0.0
+    LABEL_SMOOTHING_CEIL = 1.0
 
     NUM_TRIALS = 1
     study = optuna.create_study(study_name='hp-search-antisui_model', direction='maximize') 
@@ -98,7 +98,6 @@ def main(cfg: OmegaConf):
     print(study.best_params)
     df = study.trials_dataframe()
     df.to_csv("/workspace/kitoboy-ml/data/presui_optuna.csv")
-    print(df)
     with open("/workspace/kitoboy-ml/data/presui_bert_params.json", 'w') as f:
         json.dump(study.best_params, f)
         

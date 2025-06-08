@@ -1,11 +1,11 @@
 """Script for parsing of palata6.net forum"""
 # -*- coding: utf-8 -*-
 from datetime import datetime
-#from selenium import webdriver
-#from selenium.webdriver.common.by import By
-#from selenium.webdriver.support.ui import WebDriverWait
-#from selenium.webdriver.support import expected_conditions as ec
-#from selenium.common.exceptions import NoSuchElementException
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as ec
+from selenium.common.exceptions import NoSuchElementException
 import time
 import pandas as pd
 from bs4 import BeautifulSoup
