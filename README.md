@@ -1,6 +1,6 @@
 # kitoboy-ml
 
-
+This repo is a ML part of Kitoboy project. It contains code for training the models, preprocessing the data, managing the annotation and other ML tools.
 
 # Scripts
 
