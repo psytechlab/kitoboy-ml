@@ -36,9 +36,10 @@ RUN mkdir -p /workspace/notebooks \
 RUN git clone https://github.com/psytechlab/kitoboy-ml.git && git clone https://github.com/psytechlab/empathy_dataset_transfer.git
 RUN jupyter lab --generate-config
 
-RUN echo "from jupyter_server.auth import passwd; import os; print(passwd(os.environ['SERVER_PASSWORD']))" \
-    >> /root/.jupyter/jupyter_server_config.py
-
+RUN echo "import os" >> /root/.jupyter/jupyter_server_config.py && \
+    echo "from jupyter_server.auth import passwd" >> /root/.jupyter/jupyter_server_config.py && \
+    echo "if 'SERVER_PASSWORD' in os.environ:" >> /root/.jupyter/jupyter_server_config.py && \
+    echo "    c.ServerApp.password = passwd(os.environ['SERVER_PASSWORD'])" >> /root/.jupyter/jupyter_server_config.py
 EXPOSE 8888
 
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root", "--notebook-dir='/workspace'"]
