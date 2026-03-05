@@ -27,3 +27,5 @@ tqdm==4.66.4
 traitlets==5.14.3
 transformers==4.47.1
 numpy==1.26.4
+jupyterlab==4.5.5
+ipywidgets
